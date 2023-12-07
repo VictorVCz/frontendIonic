@@ -1,20 +1,53 @@
-<ion-header [translucent]="true">
+<!-- src/app/home/home.page.html -->
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Perfil
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <p>Hola</p>
+  <ion-card *ngIf="profileData">
+    <ion-card-header style="align-items: center;">
+      <img style="max-height: 800px;" src="../../assets/ionicfw.png" alt="ioniclogo">
+      
+      
+      
+      <h1>{{ profileData.name }} {{ profileData.lastname }} <img style="max-height: 50px;" src="../../assets/chileflag.webp" alt="flag"></h1> 
+      <ion-button color="warning">Cambiar nombre y apellido</ion-button>
+    </ion-card-header>
+    <ion-card-content>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <p>Ciudad: {{ profileData.city }} <ion-button color="warning" size="small">Cambiar ciudad</ion-button> </p> 
+        <p>Pais: {{ profileData.country }} <ion-button color="warning" size="small">Cambiar pais</ion-button> </p>
+      </div>
+      <p style="text-align: justify;">{{ profileData.summary }}</p> <ion-button color="warning">Editar introducción</ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <h2 style="font-weight: bold;">Frameworks conocidos en este año 2023: </h2>
+      <ul>  
+        <li *ngFor="let item of profileData.frameworks">
+          <p>Herramienta: {{ item.name }}</p><ion-button color="warning" size="small">Cambiar nombre de herramienta</ion-button>
+          <p>Nivel de dominio: {{ item.level }}</p><ion-button color="warning" size="small">Cambiar nivel de dominio</ion-button>
+          <p>Año de inicio: {{ item.year }}</p><ion-button color="warning" size="small">Cambiar año de inicio</ion-button>
+        </li>
+      </ul>
+
+      <h2 style="font-weight: bold;">Hobies que me interesan hacer de vez en cuando: </h2>
+      <ul>  
+        <li *ngFor="let item of profileData.hobbies">
+          <p>Hobby: {{ item.name }}</p>
+          <ion-button color="warning" size="small">Cambiar nombre del hobby</ion-button>
+          <p style="text-align: justify;">Descripción: {{ item.description }}</p>
+          <ion-button color="warning" size="small">Editar descripción del hobby</ion-button>
+        </li>
+      </ul>
+      
+    </ion-card-content>
+    <div style="display: flex ;align-items: center; justify-content: center; padding: 30px;">
+      <img style="max-height: 800px;" src="../../assets/netlogo.png" alt="asplogo">
+    </div>
+    
+  </ion-card>
 </ion-content>

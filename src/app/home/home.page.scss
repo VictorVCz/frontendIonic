@@ -25,3 +25,56 @@
 #container a {
   text-decoration: none;
 }
+
+// app.scss
+
+// Cambiar el color primario de Ionic
+$colors: (
+  primary: #3880ff,
+  secondary: #32db64,
+  danger: #f53d3d,
+  light: #f4f4f4,
+  dark: #222428
+);
+
+// Ajustar la tipografía
+$font-family-base: 'Roboto, sans-serif';
+
+// Establecer el tamaño de fuente base
+$ion-font-size-base: 16px;
+
+// Cambiar la fuente del encabezado
+$ion-header-ios-font-family: $font-family-base;
+$ion-header-md-font-family: $font-family-base;
+
+// Cambiar el color del texto principal
+$ion-text-color: #333;
+
+// Ajustar el fondo de la barra de navegación
+$ion-navbar-background-color: #3880ff;
+
+// Cambiar el color del texto de la barra de navegación
+$ion-navbar-text-color: #fff;
+
+// Cambiar el color del ícono de la barra de navegación
+$ion-navbar-icon-color: #fff;
+
+// Ajustar el color de fondo del botón
+$ion-button-background: #3880ff;
+
+// Cambiar el color del texto del botón
+$ion-button-color: #fff;
+
+// Cambiar el color del ícono del botón
+$ion-icon-color: #fff;
+
+// Cambiar el color de fondo del botón activado
+$ion-button-background-active: darken($ion-button-background, 10%);
+
+// Cambiar el color de fondo del botón activado en modo iOS
+$ion-button-background-ios-active: $ion-button-background-active;
+
+// Importar los estilos predeterminados de Ionic después de realizar las personalizaciones
+
+
+// Puedes agregar estilos adicionales después de la importación de 'ionic-angular'

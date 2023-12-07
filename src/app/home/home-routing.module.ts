@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },
+  {
+    path: 'editmodalpage',
+    loadChildren: () => import('./modal/editmodalpage/editmodalpage.module').then( m => m.EditmodalpagePageModule)
   }
 ];
 

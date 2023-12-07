@@ -1,12 +1,27 @@
-import { Component } from '@angular/core';
+// src/app/home/home.page.ts
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/services/api.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  profileData: any;
 
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
+  ngOnInit() {
+    this.apiService.getProfileData().subscribe(
+      (data) => {
+        this.profileData = data;
+      },
+      (error) => {
+        console.error('Error al obtener datos del perfil:', error);
+      }
+    );
+  }
+
+  
 }
